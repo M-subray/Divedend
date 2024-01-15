@@ -63,7 +63,6 @@ public class TokenProvider {
         try{
             return Jwts.parser().setSigningKey(this.secretKey).parseClaimsJws(token).getBody();
         } catch (ExpiredJwtException e) {
-            // TODO
             return e.getClaims();
         }
     }
